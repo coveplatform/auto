@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-ink: #16181d;
+  --color-brand: #4f46e5;
+}
+
+body {
+  background: #f6f6f4;
+  color: var(--color-ink);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition disabled:opacity-50;
+}
+.btn-primary { @apply bg-ink text-white hover:bg-black; }
+.btn-green { @apply bg-emerald-600 text-white hover:bg-emerald-700; }
+.btn-red { @apply bg-white text-red-700 ring-1 ring-red-200 hover:bg-red-50; }
+.btn-ghost { @apply bg-white text-ink ring-1 ring-black/10 hover:bg-black/5; }
+.card { @apply rounded-xl bg-white ring-1 ring-black/5 shadow-sm; }
+.input { @apply w-full rounded-md border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:border-ink; }
+.label { @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-black/50; }
+.pill { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium; }

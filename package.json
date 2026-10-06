@@ -1,0 +1,41 @@
+{
+  "name": "prospect-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n web,worker -c blue,magenta \"next dev -H 127.0.0.1\" \"tsx watch worker/index.ts\"",
+    "web": "next dev -H 127.0.0.1",
+    "worker": "tsx worker/index.ts",
+    "build": "next build",
+    "start": "concurrently -k -n web,worker \"next start -H 127.0.0.1\" \"tsx worker/index.ts\"",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "templates": "tsx scripts/preview-templates.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@anthropic-ai/vertex-sdk": "^0.20.2",
+    "better-sqlite3": "^11.10.0",
+    "cheerio": "^1.2.0",
+    "nanoid": "^5.1.16",
+    "next": "16.3.8",
+    "playwright": "^1.63.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.2.4",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}
